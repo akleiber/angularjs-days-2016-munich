@@ -1,0 +1,4 @@
+<div *ngFor="#book of books; #i = index">
+  <h1>{{i}} {{book.title}}</h1>
+  <a [href]="book.publisher.url">{{book.author}}</a>
+</div>
