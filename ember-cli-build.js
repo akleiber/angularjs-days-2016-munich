@@ -1,5 +1,5 @@
 /* global require, module */
-require('bookmonkey-api/server');
+require('bookmonkey-api');
 
 var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
