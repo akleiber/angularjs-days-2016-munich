@@ -1,11 +1,14 @@
-import {Component} from 'angular2/core';
+import {Component,provide} from 'angular2/core';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookIndex} from "./components/book-index/book-index";
 
 
 @Component({
   selector: 'workshop-app',
-  providers: [],
+  providers: [
+    HTTP_PROVIDERS
+  ],
   templateUrl: 'app/workshop.html',
   directives: [ROUTER_DIRECTIVES, BookIndex],
   pipes: []
