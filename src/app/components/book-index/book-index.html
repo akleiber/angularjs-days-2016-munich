@@ -4,7 +4,7 @@
 
 <table class="table">
   <tr *ngFor="#book of books">
-    <td>{{book.isbn}}</td>
+    <td><a [routerLink]="['/BookShow', {isbn: book.isbn}]">{{book.isbn}}</a></td>
     <td>{{book.title}}</td>
     <td>{{book.author}}</td>
   </tr>

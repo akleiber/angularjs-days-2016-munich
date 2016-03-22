@@ -1,7 +1,8 @@
-import {Component,provide} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from "angular2/core";
+import {HTTP_PROVIDERS} from "angular2/http";
+import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
 import {BookIndex} from "./components/book-index/book-index";
+import {BookShow} from "./components/book-show/book-show";
 
 
 @Component({
@@ -13,9 +14,19 @@ import {BookIndex} from "./components/book-index/book-index";
   directives: [ROUTER_DIRECTIVES, BookIndex],
   pipes: []
 })
-@RouteConfig([
 
+@RouteConfig([
+  { path: '/books',
+    component: BookIndex,
+    as: 'Books'
+  },
+  {
+    path: '/books/:isbn',
+    component: BookShow,
+    as: 'BookShow'
+  }
 ])
+
 export class WorkshopApp {
   defaultMeaning: number = 42;
 

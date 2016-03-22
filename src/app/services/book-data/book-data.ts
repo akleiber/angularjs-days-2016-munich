@@ -1,7 +1,7 @@
-import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http'
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import {Injectable} from "angular2/core";
+import {Http} from "angular2/http";
+import {Observable} from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
 export interface IBook {
     isbn: string;
@@ -18,5 +18,10 @@ export class BookData {
     public getBooks():Observable<IBook[]> {
         return this.http.get('http://localhost:4730/books')
             .map(response => response.json())
+    }
+
+    public getByIsbn(isbn: String):Observable<IBook> {
+      return this.http.get('http://localhost:4730/books/' + isbn)
+        .map(response => response.json())
     }
 }
